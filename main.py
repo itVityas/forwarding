@@ -15,7 +15,6 @@ def add_authentication(headers):
     load_dotenv()
     username = os.getenv('USERNAME')
     password = os.getenv('PASSWORD')
-    print(username, password)
     credentials = base64.b64encode(f"{username}:{password}".encode()).decode()
     headers['Authorization'] = f'Basic {credentials}'
     return headers
